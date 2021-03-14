@@ -20,7 +20,7 @@ export const ManipulateSecret: FC<HandleSecretProps> = (props) => {
   const [open, setOpen] = useState(false);
 
   const handleClickOpen = () => {
-    //  Boolean indicated weather found a shipment or no
+    //  Boolean indicated weather found a secret or no
     let found = false;
     props.secrets.map((secret: Secret, index: number) => {
       if (secretToView === secret.name || secretToView === secret.id) {

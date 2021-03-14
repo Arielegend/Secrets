@@ -21,7 +21,7 @@ export interface SimpleDialogProps {
 
 /*
   Args: 
-    1. dialogContent : Shipment -> at DIALOG, we present the data about a specific given shipment.
+    1. dialogContent : Secret -> at DIALOG, we present the data about a specific given secret.
     2. open          : Boolean  -> Indicates weather DIALOG is open or not.
     3. onClose       : Function -> The handling function closing the DIALOG. 
   */
@@ -44,6 +44,7 @@ export const SimpleDialog: React.FC<SimpleDialogProps> = (props) => {
   function handleChangeSecretNameBttn() {
     if (newSecretName.length < 1) alert("Shipment name must be largen than 0");
     else {
+      // newSecretName length is longer than 0, we check if Master key is valid
       if (checkMasterKey(secretMasrerKey)) {
         let newSecret = props.dialogContent;
         newSecret.name = newSecretName;
@@ -60,6 +61,7 @@ export const SimpleDialog: React.FC<SimpleDialogProps> = (props) => {
         "Are you sure you want to delete this secret from the database?"
       )
     ) {
+       // user confirmed deletion, we check if Master key is valid
       if (checkMasterKey(secretMasrerKey)) {
         deleteSecret(props.dialogContent);
       } else alert("Master key is wrong! (Master key is 42...)");

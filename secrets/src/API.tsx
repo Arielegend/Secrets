@@ -68,7 +68,6 @@ export async function deleteSecret(secret: Secret) {
 }
 
 export async function addSecret(newSecret: Secret) {
-  // < url is form of /shipment/{id} >
   const _pathToaSecret = "http://localhost:5000/secrets/";
 
   await fetch(_pathToaSecret, {

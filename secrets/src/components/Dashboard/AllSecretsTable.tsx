@@ -21,6 +21,7 @@ export interface SecretsTableProps {
   secrets: Secret[];
 }
 
+// Columns for main secrets table
 export const MainTableColumns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 200 },
   { field: "name", headerName: "Name", width: 250 },
@@ -28,7 +29,6 @@ export const MainTableColumns: GridColDef[] = [
 ];
 export const SecretsTable: FC<SecretsTableProps> = (props) => {
   const rows_Fixed: Secret[] = getRowsFixed(props.secrets);
-  console.log(rows_Fixed);
 
   return (
     <div style={{ height: 400, width: "100%" }}>

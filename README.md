@@ -7,10 +7,12 @@ For using JSON-SERVER we will open a port at :5000 to listen all API - calls fro
 
 
 *npm run first-time command will install modules for server, and will install modules at client directory.*
+
 *npm run start command will run server and client as well*
 
 
 ### Installation:
 - git clone https://github.com/Arielegend/SecretsManager.git
+- cd SecretsManager
 - npm run first-time
 - npm run start 
