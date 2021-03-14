@@ -1,0 +1,8 @@
+import React from "react";
+
+import "./App.css";
+import { Dashboard } from "./components/Dashboard/Dashboard";
+
+export const App = () => {
+  return <Dashboard />;
+};

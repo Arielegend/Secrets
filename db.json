@@ -1,0 +1,24 @@
+{
+  "secrets": [
+    {
+      "id": "S1",
+      "name": "Charley",
+      "text": "Brown"
+    },
+    {
+      "id": "S2",
+      "name": "Meaning of life",
+      "text": "42"
+    },
+    {
+      "id": "S3",
+      "name": "Discount",
+      "text": "123"
+    },
+    {
+      "id": "S4",
+      "name": "I love",
+      "text": "Sarah"
+    }
+  ]
+}
