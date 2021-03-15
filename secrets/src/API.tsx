@@ -1,37 +1,49 @@
 import { Secret } from "./components/Types";
+const _pathToSecrets = "http://localhost:5000/secrets";
 
-/* 
-Standard fetching function. (GET request to shipments at JSON-SERVER)
-ARGS:
-  1. setSecrets   -> the state "secrets" we initil at Dashboard
-  2. setLoading   -> the state "loading" we initial at Dashboard
+/*
+////////////////////
+////////////////////
+! 1. fetchUrl ->
+  Fetches all secrets from dataBase
 
-  After successful request, we update the data using setDataTyped, 
+! 2. changeNameOfSecret -> 
+  Changes the name of a single secret
+
+! 3. deleteSecret ->
+  Deletes a secret
+
+! 4. addSecret ->
+  Adds a new secret
+////////////////////
+////////////////////
 */
-
 export async function fetchUrl(
   setSecrets: React.Dispatch<React.SetStateAction<Secret[]>>,
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  secretsToShow: React.Dispatch<React.SetStateAction<Secret[]>>
 ) {
-  const _pathToSecrets = "http://localhost:5000/secrets";
   const response = await fetch(_pathToSecrets);
   const json = await response.json();
 
-  //  dataTyped -> Array of Shipments, fetched by GET REQUEST to all shipment.
-  // this variable is the rows for main table.
+  // Setting all dsecrets variable to hold all secrets
   setSecrets(json);
+
+  // Initially, we present all the secrets
+  // It is the same as the User is looking for an empty char
+  secretsToShow(json);
+
+  // Done fetching...
   setLoading(false);
+
   return json;
 }
 
-export async function changeNameOfSecret(
-  newSecret: Secret,
-  onClose: () => void
-) {
-  // < url is form of /shipment/{id} >
-  const _pathToaSecret = "http://localhost:5000/secrets/" + newSecret.id;
+export async function changeNameOfSecret(newSecret: Secret) {
+  // < url is form of /secret/{id} >
+  const _pathToSecret = _pathToSecrets + "/" + newSecret.id;
 
-  let response = await fetch(_pathToaSecret, {
+  let response = await fetch(_pathToSecret, {
     method: "PUT",
     mode: "cors",
     cache: "no-cache",
@@ -44,15 +56,14 @@ export async function changeNameOfSecret(
     body: JSON.stringify(newSecret),
   });
 
-  onClose();
   window.location.reload(false);
   return response.json();
 }
 
 export async function deleteSecret(secret: Secret) {
-  const _pathToaSecret = "http://localhost:5000/secrets/" + secret.id;
-
-  await fetch(_pathToaSecret, {
+  const _pathToSecret = _pathToSecrets + "/" + secret.id;
+  console.log("this is _pathToSecret -> ", _pathToSecret);
+  await fetch(_pathToSecret, {
     method: "DELETE",
     mode: "cors",
     cache: "no-cache",
@@ -68,9 +79,7 @@ export async function deleteSecret(secret: Secret) {
 }
 
 export async function addSecret(newSecret: Secret) {
-  const _pathToaSecret = "http://localhost:5000/secrets/";
-
-  await fetch(_pathToaSecret, {
+  await fetch(_pathToSecrets, {
     method: "POST",
     mode: "cors",
     cache: "no-cache",

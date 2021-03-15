@@ -1,24 +1,29 @@
 {
   "secrets": [
     {
-      "id": "S1",
-      "name": "CHARLEY",
-      "text": "Brown"
-    },
-    {
-      "id": "S2",
-      "name": "Meaning of life",
-      "text": "42"
-    },
-    {
-      "id": "S3",
-      "name": "Discount",
-      "text": "123"
-    },
-    {
-      "id": "S4",
+      "id": "256947cd-73a0-4eef-a4de-ec83eeb0a1c4",
       "name": "I love",
-      "text": "Sarah"
+      "text": "Donuts"
+    },
+    {
+      "id": "e17f97c0-bd88-4ade-8c4a-ac50ec8d567d",
+      "name": "Fibo is",
+      "text": "NachiNach"
+    },
+    {
+      "id": "a2391c81-ebb0-42b3-850b-ea2b6ac5c894",
+      "name": "All you need is",
+      "text": "Towel"
+    },
+    {
+      "id": "a1cd0410-d330-40d3-a8b5-e78e6579be4b",
+      "name": "Hapoalim",
+      "text": "Not really..."
+    },
+    {
+      "id": "502a7c36-e521-461c-bfcf-c22f03142b08",
+      "name": "Hello",
+      "text": "Town"
     }
   ]
 }

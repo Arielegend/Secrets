@@ -4,9 +4,8 @@ export interface Secret {
   text: string;
 }
 
-export const dummySecret:Secret = {
-  id: "",
-  name: "",
-  text: ""
-}
-
+export const dummySecret: Secret = {
+  id: "id_dummy",
+  name: "name_dummy",
+  text: "text_dummy",
+};
