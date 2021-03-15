@@ -12,7 +12,7 @@ For using JSON-SERVER we will open a port at :5000 to listen all API - calls fro
 
 
 ### Installation:
-- git clone https://github.com/Arielegend/SecretsManager.git
-- cd SecretsManager
+- git clone https://github.com/Arielegend/Secrets.git
+- cd Secrets
 - npm run first-time
 - npm run start 
